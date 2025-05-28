@@ -20,7 +20,7 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-    if: ${{ inputs.run-test == 'true'}}
+    if: ${{ inputs.run-test == 'false'}}
     steps:
       - name: Print hello
         run: echo "First test"
