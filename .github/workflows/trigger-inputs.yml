@@ -1,0 +1,35 @@
+name : triggered workflow with Various Inputs
+on:
+  workflow_dispatch
+    inputs:
+      run-test:
+        description: "Run test?"
+        type: boolean
+        required : true
+      test-type:
+        description: "Type of tests to run"
+        type: choice
+        options:
+          - unit
+          - integration
+          - all
+        required: true
+
+    jobs:
+      if: ${{inputs.run-tests == 'true'}} 
+      deploy:
+        runs-on: ubuntu-latest
+        steps:
+          - name : print hello 
+            run: | 
+                echo first test
+          - name : run uni test
+            if: ${{inputs.test-type == "unit"}} || ${{inputs.test-type == "all"}}
+            run:
+              echo "unitest run"
+          - name :  run integration test
+            if : ${{inputs.test-type == "integration"}} || ${{inputs.test-type == "all"}}
+            run: echo "integrtion run"
+    
+            
+      
