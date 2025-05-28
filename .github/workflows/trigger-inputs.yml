@@ -28,10 +28,10 @@ jobs:
         
       - name: Run unit tests
         if: ${{ inputs.test-type == 'test' }} || ${{ inputs.test-type == 'all' }}
-        run: echo "Unit tests run"
+        run: echo "Unit tests runtt"
         
       - name: Run integration test
         if:  ${{ inputs.test-type == 'integration' }} || ${{ inputs.test-type == 'all' }}
-        run: echo "Integration run"
+        run: echo "Integration runzz"
           
     
