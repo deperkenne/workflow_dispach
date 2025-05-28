@@ -20,7 +20,6 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-    if: ${{ inputs.run-test}}
     steps:
       - name: Print hello
         run: echo "First test"
