@@ -7,7 +7,6 @@ on:
         description: "Run test?"
         type: boolean
         required: true
-        default: false
       test-type:
         description: "Type of tests to run"
         type: choice
@@ -23,7 +22,7 @@ jobs:
  
     steps:
       - name: Print hello
-        if: ${{ inputs.run-test == 'false'}}
+        if: ${{ inputs.run-test == 'true'}}
         run: echo "First test"
         
       - name: Run unit tests
