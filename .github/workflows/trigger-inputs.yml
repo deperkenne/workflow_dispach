@@ -18,9 +18,10 @@ on:
         required: true
 
 jobs:
-      if: ${{inputs.run-tests == 'true'}} 
+    
       deploy:
         runs-on: ubuntu-latest
+        if: ${{inputs.run-tests == 'true'}} 
         steps:
           - name : print hello 
             run: | 
