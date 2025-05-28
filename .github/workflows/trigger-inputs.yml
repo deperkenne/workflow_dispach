@@ -20,9 +20,10 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-    if: ${{ inputs.run-test == 'false'}}
+ 
     steps:
       - name: Print hello
+        if: ${{ inputs.run-test == 'true'}}
         run: echo "First test"
         
       - name: Run unit tests
