@@ -15,7 +15,7 @@ on:
           - all
         required: true
 
-    jobs:
+  jobs:
       if: ${{inputs.run-tests == 'true'}} 
       deploy:
         runs-on: ubuntu-latest
