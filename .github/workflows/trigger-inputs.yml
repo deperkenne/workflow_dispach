@@ -1,12 +1,13 @@
 name : triggered workflow with Various Inputs
 
 on:
-  workflow_dispatch
+  workflow_dispatch:
     inputs:
       run-test:
         description: "Run test?"
         type: boolean
-        required : true
+        required: true
+        default: false
       test-type:
         description: "Type of tests to run"
         type: choice
