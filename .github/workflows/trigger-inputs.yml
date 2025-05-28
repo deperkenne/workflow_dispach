@@ -26,11 +26,11 @@ jobs:
         run: echo "First test"
         
       - name: Run unit tests
-        if: ${{ contains(['unit', 'all'], inputs.test-type) }}
+        if: ${{ inputs.test-type == 'test' }} || ${{ inputs.test-type == 'all' }}
         run: echo "Unit tests run"
         
       - name: Run integration test
-        if: ${{ contains(['integration', 'all'], inputs.test-type) }}
+        if:  ${{ inputs.test-type == 'integration' }} || ${{ inputs.test-type == 'all' }}
         run: echo "Integration run"
           
     
