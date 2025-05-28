@@ -23,11 +23,11 @@ jobs:
  
     steps:
       - name: Print hello
-        if: ${{ inputs.run-test == 'true'}}
+        if: ${{ inputs.run-test == 'false'}}
         run: echo "First test"
         
       - name: Run unit tests
-        if: ${{ inputs.test-type == 'test' }} || ${{ inputs.test-type == 'all' }}
+        if: ${{ inputs.test-type == 'unit' }} || ${{ inputs.test-type == 'all' }}
         run: echo "Unit tests runtt"
         
       - name: Run integration test
